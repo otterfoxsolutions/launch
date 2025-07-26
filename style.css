@@ -1,136 +1,163 @@
+/* General Reset & Global Background */
 body,
 html {
-  margin: 0;
-  padding: 0;
-  font-family: "Montserrat", sans-serif;
-  height: 100%;
+    margin: 0;
+    padding: 0;
+    font-family: "Montserrat", sans-serif;
+    height: 100%;
+    background: url("images/background.png") no-repeat center center/cover;
+    background-attachment: fixed; /* Makes the background stay put while content scrolls */
 }
 
+/* Base Link Styling (Mini-Reset) */
+a {
+    text-decoration: none;
+    color: inherit; /* Inherit color from parent by default */
+}
+
+/* Landing Page Specific Styles */
 .background {
-  background: url("images/background.png") no-repeat center center/cover;
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+    height: 100vh; /* Full viewport height for the landing screen */
+    display: flex;
+    justify-content: center;
+    align-items: center; /* Centers the .card vertically */
 }
 
 .card {
-  background: rgba(255, 255, 255, 0.85);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  text-align: center;
-  max-width: 420px;
-  width: 90%;
-  height: 100vh; /* Fill full viewport height */
-  padding: 3rem 2.5rem; /* Adjust padding as needed */
-  border-radius: 16px;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
-
-  display: flex; /* Flexbox to center content vertically */
-  flex-direction: column;
-  justify-content: center;
+    height: 100vh; /* Ensures the card itself also takes full height on landing */
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Centers content within the card vertically */
 }
 
+/* Logo Styling */
 .logo {
-  width: 100px;
-  height: 100px;
-  margin: 0 auto -0.5rem auto;
-  object-fit: contain;
-  display: block;
+    width: 100px;
+    height: 100px;
+    margin: 0 auto -0.5rem auto;
+    object-fit: contain;
+    display: block;
 }
 
+/* Brand Name Styling */
 .brand {
-  font-family: "Libre Baskerville", serif;
-  font-size: 1.25rem;
-  letter-spacing: 4px;
-  margin: 0;
-  text-transform: uppercase;
-  color: #2c1d10;
+    font-family: "Libre Baskerville", serif;
+    font-size: 1.25rem;
+    letter-spacing: 4px;
+    margin: 0;
+    text-transform: uppercase;
+    color: #2c1d10;
 }
 
 .brand span {
-  display: block;
-  font-size: 1rem;
-  color: #2c1d10;
-  font-weight: normal;
-  letter-spacing: 1px;
+    display: block;
+    font-size: 1rem;
+    color: #2c1d10;
+    font-weight: normal;
+    letter-spacing: 1px;
 }
 
+/* Launching Soon Heading */
 .launch {
-  font-family: "DM Serif Display", serif;
-  font-size: 2.2rem;
-  font-weight: 100;
-  line-height: 1.3;
-  letter-spacing: 0.3px;
-  margin: 2rem 0 1rem;
+    font-family: "DM Serif Display", serif;
+    font-size: 2.2rem;
+    font-weight: 100;
+    line-height: 1.3;
+    letter-spacing: 0.3px;
+    margin: 2rem 0 1rem;
 }
 
+/* General Subtext Styling */
 .subtext {
-  font-size: 1rem;
-  color: #555;
-  margin: 0.5rem 0 1rem; /* Adjust margin-bottom to make space for tagline */
-
-  
+    font-size: 1rem;
+    color: #555;
+    margin: 0.5rem 0 1rem;
+    line-height: 1.6; /* Added for general readability */
 }
 
+/* Tagline Styling (softened look) */
 .tagline {
-    font-family: "Montserrat", sans-serif; /* Keep consistent with body font */
-    font-size: 1rem; /* Match the old .subtext size for a softer feel */
-    color: #555; /* Use the same softer grey as the old .subtext */
-    margin: 1.5rem auto 2rem; /* Adjusted vertical margins to give it breathing room */
-    line-height: 1.5; /* Good for readability */
-    font-weight: normal; /* Make it normal weight, like typical body text */
-    letter-spacing: 0; /* Remove extra letter spacing for a softer look */
+    font-family: "Montserrat", sans-serif;
+    font-size: 1rem;
+    color: #555;
+    margin: 1.5rem auto 2rem;
+    line-height: 1.5;
+    font-weight: normal;
+    letter-spacing: 0;
     text-align: center;
-    max-width: 320px; /* Constrain width for better readability on wider screens */
+    max-width: 320px;
 }
 
+/* Notify Button/Link Styling */
 .notify {
-  background-color: #2ea9a0;
-  color: white;
-  border: none;
- 
-  border-radius: 25px;
-  font-size: 1rem;
-  cursor: pointer;
-  margin: 1.5rem auto;
-  transition: background 0.3s ease;
-  text-decoration: none; /* removes default style*/
-
-  /* 👇 This keeps it from stretching too far */
-  width: auto;
-  max-width: 200px;
-  display: block;
-  padding: 0.6rem 1.5rem;
+    background-color: #2ea9a0;
+    color: white;
+    border: none;
+    border-radius: 25px;
+    font-size: 1rem;
+    cursor: pointer;
+    margin: 1.5rem auto;
+    transition: background 0.3s ease;
+    text-decoration: none;
+    width: auto;
+    max-width: 200px;
+    display: block; /* Ensures it takes its own line and respects margin: auto */
+    padding: 0.6rem 1.5rem;
 }
 
 .notify:hover {
-  background-color: #24837a;
+    background-color: #24837a;
 }
 
+/* Social Media Icons Styling */
 .socials a {
-  margin: 0 0.5rem;
-  font-size: 1.25rem;
-  color: #333;
-  text-decoration: none;
-  transition: color 0.3s ease;
-
- 
+    margin: 0 0.5rem;
+    font-size: 1.25rem;
+    color: #333;
+    transition: color 0.3s ease;
+    cursor: pointer; /* Ensures pointer cursor on hover */
 }
 
 .socials a:hover {
-  color: #2ea9a0;
+    color: #2ea9a0;
 }
 
-/* New styles for the services section */
-
-.section {
-    padding: 60px 20px; /* Adjust padding as needed */
+/* Reusable Content Panel Styling */
+.content-panel {
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
     text-align: center;
-    max-width: 1000px; /* Constrain width for readability */
-    margin: 0 auto;
+    max-width: 420px; /* Default for smaller screens */
+    width: 90%;
+    padding: 3rem 2.5rem;
+    border-radius: 16px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+    margin: 0 auto; /* Centers the panel horizontally */
+    box-sizing: border-box; /* Ensures padding doesn't push width over max-width */
 }
 
+/* Responsive adjustments for content-panel width */
+@media (min-width: 768px) {
+    .content-panel {
+        max-width: 700px;
+    }
+}
+@media (min-width: 1024px) {
+    .content-panel {
+        max-width: 900px;
+    }
+}
+
+/* Section Specific Styles (for scrolling content) */
+.section {
+    padding: 60px 20px; /* Padding inside the section, before the content-panel */
+    text-align: center;
+    max-width: 1000px; /* Max width for the overall section container */
+    margin: 40px auto; /* Adds vertical spacing between content panels */
+}
+
+/* Section Heading Styles */
 .section h3 {
     font-family: "DM Serif Display", serif;
     font-size: 2.5rem;
@@ -138,39 +165,52 @@ html {
     color: #2c1d10;
 }
 
-.section h4 { /* NEW: Style for service item headings */
-    font-family: "Montserrat", sans-serif; /* Or DM Serif Display if you prefer */
+/* Service Item Heading Styles */
+.section h4 {
+    font-family: "Montserrat", sans-serif;
     font-size: 1.4rem;
     color: #2c1d10;
     margin-bottom: 15px;
 }
 
-.section p { /* Apply some styling to paragraphs within sections */
+/* Flex Container for Grid Layouts */
+.flex-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+}
+
+/* Individual Flex Item (Service/Portfolio/Process/Blog Card) */
+.flex-item {
+    flex: 1;
+    min-width: 280px;
+    max-width: 350px;
+    padding: 20px;
+    border-radius: 8px;
+    /* Removed background-color and box-shadow for continuous panel look */
+    text-align: center;
+}
+
+/* Specific styling for paragraphs within sections to ensure consistency */
+.section p {
     font-family: "Montserrat", sans-serif;
     font-size: 1rem;
     color: #555;
     line-height: 1.6;
 }
 
-.light-bg {
-    background-color: #f8f8f8; /* A subtle background for contrast */
+/* Footer Specific Styles */
+footer {
+    padding: 20px; /* Padding for the footer section itself */
+    text-align: center;
+    background-color: transparent; /* Ensure footer background is transparent to show global background */
+    color: #333; /* Adjust text color for readability on background */
+    font-size: 0.9rem;
+    margin-top: 40px; /* Space above the footer */
 }
 
-/* For responsive columns */
-.flex-container {
-    display: flex;
-    flex-wrap: wrap; /* Allows items to wrap on smaller screens */
-    justify-content: center;
-    gap: 30px; /* Space between items */
-}
-
-.flex-item {
-    flex: 1; /* Allows items to grow/shrink */
-    min-width: 280px; /* Minimum width before wrapping */
-    max-width: 350px; /* Max width for larger screens */
-    padding: 20px;
-    border-radius: 8px;
-    background-color: #fff;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-    text-align: center; /* Changed from left for consistent card presentation */
+footer .content-panel {
+    /* Adjust footer panel specific styles if needed, e.g., smaller padding */
+    padding: 1.5rem 2rem;
 }
