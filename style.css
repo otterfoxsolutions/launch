@@ -235,7 +235,4 @@ footer {
     scroll-snap-align: start; /* Snap to the start of this element */
 }
 
-footer .content-panel {
-    /* Adjust footer panel specific styles if needed, e.g., smaller padding */
-    padding: 1.5rem 2rem;
-}
+
