@@ -7,6 +7,8 @@ html {
     height: 100%;
     background: url("images/background.png") no-repeat center center/cover;
     background-attachment: fixed; /* Makes the background stay put while content scrolls */
+    scroll-snap-type: y mandatory; /* Enable vertical scroll snapping, must snap to target */
+    overflow-y: scroll; /* Ensure scrollbar is always visible for snapping to work consistently */
 }
 
 /* Base Link Styling (Mini-Reset) */
@@ -21,9 +23,11 @@ a {
     display: flex;
     justify-content: center;
     align-items: center; /* Centers the .card vertically */
+    scroll-snap-align: start; /* Snap to the start of this element */
 }
 
 .card {
+    /* This .card class is primarily for the landing page content's internal layout */
     height: 100vh; /* Ensures the card itself also takes full height on landing */
     display: flex;
     flex-direction: column;
@@ -57,7 +61,7 @@ a {
     letter-spacing: 1px;
 }
 
-/* Launching Soon Heading */
+/* Launching Soon/Under Construction Heading */
 .launch {
     font-family: "DM Serif Display", serif;
     font-size: 2.2rem;
@@ -73,6 +77,7 @@ a {
     color: #555;
     margin: 0.5rem 0 1rem;
     line-height: 1.6; /* Added for general readability */
+    text-align: center; /* ADDED: Ensure subtext is centered */
 }
 
 /* Tagline Styling (softened look) */
@@ -84,7 +89,7 @@ a {
     line-height: 1.5;
     font-weight: normal;
     letter-spacing: 0;
-    text-align: center;
+    text-align: center; /* Already here, confirming it's present */
     max-width: 320px;
 }
 
@@ -96,12 +101,11 @@ a {
     border-radius: 25px;
     font-size: 1rem;
     cursor: pointer;
-    margin: 1.5rem auto;
     transition: background 0.3s ease;
     text-decoration: none;
-    width: 200px;    
+    width: 200px; /* Fixed width for consistent button size */
     display: block; /* Ensures it takes its own line and respects margin: auto */
-    margin: 1.5rem auto 0.75rem auto; /* Adjusted margin for spacing between two buttons */
+    margin: 0.75rem auto; /* Adjusted margin for spacing between buttons */
     padding: 0.6rem 1.5rem;
 }
 
@@ -109,12 +113,13 @@ a {
     background-color: #24837a;
 }
 
-/* Social Media Icons Styling */
+/* Social Media Icons Container */
 .socials {
-    margin-top: 2rem; /* This will add space above the entire social icon group */
-    margin-bottom: 1rem; /* Optional: Add a little space below if content follows */
+    margin-top: 2rem; /* Adds space above the social icons */
+    margin-bottom: 1rem; /* Optional: Adds a little space below if content follows */
 }
 
+/* Individual Social Media Icon Links */
 .socials a {
     margin: 0 0.5rem;
     font-size: 1.25rem;
@@ -127,19 +132,27 @@ a {
     color: #2ea9a0;
 }
 
-/* Reusable Content Panel Styling */
+/* Reusable Translucent Content Panel Styling */
 .content-panel {
     background: rgba(255, 255, 255, 0.85);
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
-    text-align: center;
+    text-align: center; /* RE-ADDED: Ensure all text within the panel is centered by default */
     max-width: 420px; /* Default for smaller screens */
     width: 90%;
     padding: 3rem 2.5rem;
     border-radius: 16px;
     box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
-    margin: 0 auto; /* Centers the panel horizontally */
+    margin: 0 auto; /* Centers the panel horizontally within its parent */
     box-sizing: border-box; /* Ensures padding doesn't push width over max-width */
+    
+    /* MODIFIED for full height and internal centering */
+    height: 100%; /* Make content-panel fill the height of its 100vh parent (.section) */
+    display: flex; /* Make content-panel a flex container */
+    flex-direction: column; /* Stack its children vertically */
+    justify-content: center; /* Vertically center content within the panel */
+    align-items: center; /* Horizontally center content within the panel */
+    /* Removed max-height and overflow-y as the panel itself will be 100% height */
 }
 
 /* Responsive adjustments for content-panel width */
@@ -154,12 +167,15 @@ a {
     }
 }
 
-/* Section Specific Styles (for scrolling content) */
+/* Section Specific Styles (for all scrolling content blocks to be full-page and centered) */
 .section {
-    padding: 60px 20px; /* Padding inside the section, before the content-panel */
-    text-align: center;
-    max-width: 1000px; /* Max width for the overall section container */
-    margin: 40px auto; /* Adds vertical spacing between content panels */
+    height: 100vh; /* Make each section take full viewport height */
+    display: flex; /* Use flexbox to center content vertically */
+    justify-content: center;
+    align-items: center;
+    padding: 0; /* No padding on the section itself, content-panel handles inner padding */
+    margin: 0; /* No margin between full-height sections */
+    scroll-snap-align: start; /* Snap to the start of this element */
 }
 
 /* Section Heading Styles */
@@ -193,7 +209,6 @@ a {
     max-width: 350px;
     padding: 20px;
     border-radius: 8px;
-    /* Removed background-color and box-shadow for continuous panel look */
     text-align: center;
 }
 
@@ -207,12 +222,17 @@ a {
 
 /* Footer Specific Styles */
 footer {
+    height: 100vh; /* Make footer also take full viewport height */
+    display: flex; /* Use flexbox to center content vertically */
+    justify-content: center;
+    align-items: center;
     padding: 20px; /* Padding for the footer section itself */
     text-align: center;
     background-color: transparent; /* Ensure footer background is transparent to show global background */
     color: #333; /* Adjust text color for readability on background */
     font-size: 0.9rem;
-    margin-top: 40px; /* Space above the footer */
+    margin-top: 0; /* No margin between full-height sections */
+    scroll-snap-align: start; /* Snap to the start of this element */
 }
 
 footer .content-panel {
