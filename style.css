@@ -99,9 +99,9 @@ a {
     margin: 1.5rem auto;
     transition: background 0.3s ease;
     text-decoration: none;
-    width: auto;
-    max-width: 200px;
+    width: 200px;    
     display: block; /* Ensures it takes its own line and respects margin: auto */
+    margin: 1.5rem auto 0.75rem auto; /* Adjusted margin for spacing between two buttons */
     padding: 0.6rem 1.5rem;
 }
 
@@ -110,6 +110,11 @@ a {
 }
 
 /* Social Media Icons Styling */
+.socials {
+    margin-top: 2rem; /* This will add space above the entire social icon group */
+    margin-bottom: 1rem; /* Optional: Add a little space below if content follows */
+}
+
 .socials a {
     margin: 0 0.5rem;
     font-size: 1.25rem;
