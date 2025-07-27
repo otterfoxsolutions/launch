@@ -135,16 +135,39 @@
         </div>
     </section>
 
-    <!-- CONTACT US SECTION - Standard section for scrolling content -->
-    <section id="contact" class="section"> <!-- Only .section class here -->
-        <div class="content-panel"> <!-- content-panel for the translucent background and padding -->
+  <!-- CONTACT US SECTION - Standard section for scrolling content -->
+    <section id="contact" class="section">
+        <div class="content-panel">
             <h3>Get in Touch</h3>
-            <p class="subtext">Ready to start your next web project? Let's talk!</p>
-            <p>Email: <a href="mailto:hello@otterfoxsolutions.com">hello@otterfoxsolutions.com</a></p>
-            <p>Phone: <a href="tel:+15195551234">+1 (519) 555-1234</a></p>
+            <p class="subtext">Have a question? Send us a message!</p>
+            
+            <form class="contact-form" action="#" method="POST">
+                <!-- Name Input -->
+                <input type="text" id="name" name="name" placeholder="Your Name" required>
+                
+                <!-- Email Input -->
+                <input type="email" id="email" name="email" placeholder="Your Email" required>
+                
+                <!-- Phone Number Input (Optional) -->
+                <input type="tel" id="phone" name="phone" placeholder="Your Phone Number (Optional)">
+                
+                <!-- Message Textarea -->
+                <textarea id="message" name="message" rows="6" placeholder="Your Message" required></textarea>
+                
+                <!-- Submit Button -->
+                <button type="submit" class="notify contact-submit-btn">Send Message</button>
+            </form>
+        </div>
+
+        <div class="content-panel">
+            <h3>Get Started</h3>
+            <p class="subtext">Ready to start your next web project? Fill out this form and we will be in contact within 24 hours</p>
+            <a href="https://misty-age-3f0.notion.site/232d43648754812fa510d1db869f5f7b?pvs=105" class="notify">New Client Intake</a>
+        
         </div>
     </section>
 
+       
     
 
 </body>

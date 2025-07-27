@@ -235,4 +235,38 @@ footer {
     scroll-snap-align: start; /* Snap to the start of this element */
 }
 
+/* Contact Form Styles */
+.contact-form {
+    width: 100%;
+    max-width: 500px;
+    margin: 30px auto;
+    display: flex;
+    flex-direction: column;
+    gap: 15px; /* Space between form fields */
+    text-align: left; /* Align labels/placeholders to the left within the form */
+}
+
+.contact-form input[type="text"],
+.contact-form input[type="email"],
+.contact-form input[type="tel"],
+.contact-form textarea {
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-family: 'Montserrat', sans-serif; /* Ensure font consistency */
+    width: 100%; /* Make inputs take full width of their container */
+    box-sizing: border-box; /* Include padding and border in the element's total width */
+}
+
+.contact-form textarea {
+    resize: vertical; /* Allow vertical resizing only */
+}
+
+/* Specific style for the submit button within the form */
+.contact-form .contact-submit-btn {
+    align-self: center; /* Center the button within the flex column */
+    margin-top: 20px; /* Add space above the button */
+    /* Inherits width: 200px from .notify */
+}
 
